@@ -31,16 +31,26 @@
      -------------------------------- -------------------------------- -->
 
 
-
+    <!-- inline css -->
     <p style="color: rgb(14, 212, 31);">This is a test paragraph.</p>
-    
-    <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+
+    <button id="demo" type="button" onclick="document.getElementById('demo').innerHTML = Date()">
         Click me to display Date and Time.
     </button>
 
 
 
-    <script src="test.js"></script>
+    <script src="test.js">
+        // JavaScript code to display current date and time
+        function displayDateTime() {
+            var today = new Date();
+            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            document.getElementById('demo').innerHTML = date +'' + time;
+        }
+        // Calling the function to display date and time
+        displayDateTime();
+    </script>
 </body>
 
 </html>
